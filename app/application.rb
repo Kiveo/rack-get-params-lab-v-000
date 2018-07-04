@@ -20,6 +20,8 @@ class Application
       else
         resp.write @@cart.join("\n")
       end
+    elsif req.path.match(/add/)
+
     else
       resp.write "Path Not Found"
     end
