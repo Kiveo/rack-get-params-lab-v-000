@@ -16,13 +16,13 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/cart/)
       if @@cart == []
-        resp.write "Your cart is empty"
+        resp.write "Your cart is empty" #if cart is empty
       else
-        resp.write @@cart.join("\n")
+        resp.write @@cart.join("\n") #list items if cart is not empty
       end
     elsif req.path.match(/add/)
       search_term = req.params["item"]
-      resp.write handle_search(search_term) #add item search 
+      resp.write handle_search(search_term) #add item search
     else
       resp.write "Path Not Found"
     end
