@@ -1,8 +1,8 @@
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
-  @@cart = [] #cart to hold items being added 
-  
+  @@cart = [] #cart to hold items being added
+
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
