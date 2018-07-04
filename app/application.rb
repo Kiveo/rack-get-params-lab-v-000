@@ -21,13 +21,21 @@ class Application
         resp.write @@cart.join("\n") #list items if cart is not empty
       end
     elsif req.path.match(/add/)
-      search_term = req.params["item"]
-      resp.write handle_search(search_term) #add item search
+      add_term = req.params["item"]
+      resp.write handle_search(add_term) #add item search
     else
       resp.write "Path Not Found"
     end
 
     resp.finish
+  end
+
+  def handle_add(add_term)
+    if @@items.include?(add_term)
+      return "#{add_term} is one of our items"
+    else
+      return "We don't have that item"
+    end
   end
 
   def handle_search(search_term)
