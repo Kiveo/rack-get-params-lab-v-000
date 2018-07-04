@@ -18,7 +18,7 @@ class Application
       if @@cart == []
         resp.write "Your cart is empty"
       else
-        resp.write @@cart.each {|cart_item| "#{cart_item}"}
+        resp.write @@cart.each {|cart_item| "#{cart_item}\n"}
       end
     else
       resp.write "Path Not Found"
